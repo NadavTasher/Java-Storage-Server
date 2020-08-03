@@ -18,7 +18,7 @@ public class Area {
     private Keystore configuration;
     private ArrayList<Keystore> keystores;
 
-    public Area(String name) {
+    public Area(String name) throws Exception {
         // Initialize name
         this.name = name;
 
@@ -35,9 +35,16 @@ public class Area {
     /**
      * Initializes the area in the filesystem (Creates directories).
      */
-    private void initialize() {
-        // Check whether the area already exists
-        if ()
+    private void initialize() throws Exception {
+        // Make sure the directory exists
+        if (!this.directory.exists())
+            // Create the directory
+            if (!this.directory.mkdir())
+                // Throw exception
+                throw new Exception("Unable to create root directory. Check your permissions.");
+
+        // Initialize the configuration keystore
+        this.configuration = new Keystore("configuration");
     }
 
 }
