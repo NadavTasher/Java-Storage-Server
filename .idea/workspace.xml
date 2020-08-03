@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5167fad-0117-4231-b42e-641b19a3f094" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/communication/CommandLine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/communication/Embedded.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/filesystem/Path.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/server/Operation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/server/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/nadav.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/area/Area.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/area/Keystore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/system/Storage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/system/Utility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/filesystem/Path.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/node/Node.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/node/keystore/Keystore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/server/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -69,6 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1596302261903</updated>
       <workItem from="1596302265330" duration="985000" />
+      <workItem from="1596479946349" duration="2548000" />
     </task>
     <servers />
   </component>
@@ -76,6 +79,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="692" y="357" width="525" height="400" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596480102797">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="692" y="357" width="525" height="400" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1596480102797" />
     <state x="693" y="303" width="524" height="508" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596302990304">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
