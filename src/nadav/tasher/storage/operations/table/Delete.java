@@ -1,4 +1,4 @@
-package nadav.tasher.storage.operations.keystore.entry;
+package nadav.tasher.storage.operations.table;
 
 import nadav.tasher.storage.area.Area;
 import nadav.tasher.storage.implementation.Operation;
@@ -27,15 +27,15 @@ public class Delete extends Operation {
             throw new Exception("Unable to delete keystore. Area does not exist.");
 
         // Create the keystore object
-        Area.Keystore keystore = area.keystore(this.keystore);
+        Area.Table table = area.table(this.keystore);
 
         // Make sure the keystore does not exists
-        if (!keystore.exists())
+        if (!table.exists())
             // Throw exception
             throw new Exception("Unable to delete keystore. Keystore does not exist.");
 
         // Create the keystore
-        keystore.remove();
+        table.remove();
 
         // Return null
         return null;

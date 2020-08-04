@@ -9,7 +9,7 @@ import java.nio.file.Files;
 public class Area extends Path {
 
     // Keystores
-    private Keystore configuration;
+    private Table configuration;
 
     /**
      * Area constructor.
@@ -21,7 +21,7 @@ public class Area extends Path {
         super(Storage.ROOT, name);
 
         // Initialize the configuration keystore
-        this.configuration = new Keystore(this, "configuration");
+        this.configuration = new Table(this, "configuration");
     }
 
     /**
@@ -30,12 +30,12 @@ public class Area extends Path {
      * @param name Keystore name
      * @return Keystore object
      */
-    public Keystore keystore(String name) {
+    public Table table(String name) {
         // Create the keystore object
-        return new Keystore(this, name);
+        return new Table(this, name);
     }
 
-    public static class Keystore extends Path {
+    public static class Table extends Path {
 
         /**
          * Keystore constructor.
@@ -43,7 +43,7 @@ public class Area extends Path {
          * @param area Parent area
          * @param name Keystore name
          */
-        private Keystore(Area area, String name) {
+        private Table(Area area, String name) {
             // Initialize path
             super(area.getDirectory(), name);
         }
@@ -63,12 +63,12 @@ public class Area extends Path {
             /**
              * Entry constructor.
              *
-             * @param keystore Parent keystore
+             * @param table Parent keystore
              * @param id       Entry ID
              */
-            private Entry(Keystore keystore, String id) {
+            private Entry(Table table, String id) {
                 // Initialize path
-                super(keystore.getDirectory(), id);
+                super(table.getDirectory(), id);
             }
 
             /**
@@ -77,11 +77,11 @@ public class Area extends Path {
              * @param name Key name
              * @return Key object
              */
-            public Key key(String name) {
-                return new Key(this, name);
+            public Value value(String name) {
+                return new Value(this, name);
             }
 
-            public static class Key extends Path {
+            public static class Value extends Path {
 
                 // The entry's files
                 private File binary;
@@ -93,7 +93,7 @@ public class Area extends Path {
                  * @param entry Parent entry
                  * @param name  Key name
                  */
-                private Key(Entry entry, String name) {
+                private Value(Entry entry, String name) {
                     // Initialize path
                     super(entry.getDirectory(), name);
 
@@ -103,9 +103,9 @@ public class Area extends Path {
                 }
 
                 /**
-                 * Reads the key's value.
+                 * Reads the value.
                  *
-                 * @return Key value
+                 * @return Value
                  * @throws Exception Exception
                  */
                 public String get() throws Exception {
@@ -118,9 +118,9 @@ public class Area extends Path {
                 }
 
                 /**
-                 * Writes the key's value.
+                 * Writes the value.
                  *
-                 * @param contents Key value
+                 * @param contents Value
                  * @throws Exception Exception
                  */
                 public void set(String contents) throws Exception {

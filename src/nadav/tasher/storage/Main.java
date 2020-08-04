@@ -12,11 +12,11 @@ public class Main {
         try {
             // Initialize the storage manager
             Storage.initialize();
-            // Initialize the server
-            Server.initialize();
             // Initialize communications
             Embedded.initialize(1000);
             CommandLine.initialize(1001);
+            // Initialize the server
+            Server.initialize();
         } catch (Exception e) {
             e.printStackTrace();
         }
