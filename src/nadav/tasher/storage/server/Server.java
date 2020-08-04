@@ -6,7 +6,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Queue;
 
-public class Server {
+public abstract class Server {
 
     private static final Queue<Operation> queue = new ArrayDeque<>();
 
