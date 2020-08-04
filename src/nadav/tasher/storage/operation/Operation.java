@@ -1,4 +1,4 @@
-package nadav.tasher.storage.server;
+package nadav.tasher.storage.operation;
 
 public interface Operation {
 
