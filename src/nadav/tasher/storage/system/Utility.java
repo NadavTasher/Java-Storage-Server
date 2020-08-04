@@ -13,7 +13,7 @@ public abstract class Utility {
      * @param string String
      * @return Hexadecimal encoded string
      */
-    public static String hexadecimal(String string) {
+    public static String encode(String string) {
         // Create result buffer
         StringBuilder result = new StringBuilder();
         // Convert string to bytes
@@ -24,6 +24,20 @@ public abstract class Utility {
         }
         // Return result buffer
         return result.toString();
+    }
+
+    public static String decode(String string) {
+        // Create result buffer
+        byte[] result = new byte[string.length() / 2];
+        // Loop over string
+        for (int index = 0; index < result.length; index++) {
+            // Add byte
+            result[index] = Byte.parseByte(string.substring(0, 2), 16);
+            // Slice string
+            string = string.substring(2);
+        }
+        // Return result buffer
+        return new String(result);
     }
 
     /**
@@ -54,7 +68,8 @@ public abstract class Utility {
 
         /**
          * Tuple constructor.
-         * @param key Key
+         *
+         * @param key   Key
          * @param value Column
          */
         public Tuple(K key, V value) {
@@ -65,6 +80,7 @@ public abstract class Utility {
 
         /**
          * Returns the key.
+         *
          * @return Key
          */
         public K getKey() {
@@ -73,6 +89,7 @@ public abstract class Utility {
 
         /**
          * Returns the value.
+         *
          * @return Column
          */
         public V getValue() {

@@ -5,6 +5,8 @@ import nadav.tasher.storage.system.Utility;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public abstract class Server {
 
@@ -13,15 +15,17 @@ public abstract class Server {
     public static void initialize() {
         // Create queue
         Server.queue = new ArrayDeque<>();
-        // Create server thread
-        Thread server = new Thread(() -> {
-            // Handle queue forever
-            while (true)
-                Server.handle();
-        });
 
-        // Start thread
-        server.start();
+        // Create server timer
+        Timer server = new Timer();
+
+        // Schedule task
+        server.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                Server.handle();
+            }
+        }, 0, 10);
     }
 
     /**

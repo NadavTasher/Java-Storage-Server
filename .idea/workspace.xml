@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f5167fad-0117-4231-b42e-641b19a3f094" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/communication/Embedded.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/communication/Embedded.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/implementation/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/implementation/Path.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/system/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/system/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/system/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/system/Utility.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +45,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -88,7 +89,7 @@
       <workItem from="1596479946349" duration="4046000" />
       <workItem from="1596521995536" duration="1219000" />
       <workItem from="1596530246036" duration="14096000" />
-      <workItem from="1596553710952" duration="8607000" />
+      <workItem from="1596553710952" duration="14072000" />
     </task>
     <task id="LOCAL-00001" summary="More base work on all classes">
       <created>1596482527249</created>
@@ -153,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596559870109</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="New comm">
+      <created>1596567429237</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1596567429237</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,7 +175,8 @@
     <MESSAGE value="Work on server and CLI" />
     <MESSAGE value="More work on context" />
     <MESSAGE value="General progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="General progress" />
+    <MESSAGE value="New comm" />
+    <option name="LAST_COMMIT_MESSAGE" value="New comm" />
   </component>
   <component name="WindowStateProjectService">
     <state x="692" y="357" width="525" height="400" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596480102797">
@@ -186,10 +195,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="693" y="303" width="524" height="508" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1596559384037" />
-    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2" timestamp="1596559869781">
+    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2" timestamp="1596567428917">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1596559869781" />
+    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1596567428917" />
     <state x="832" y="453" width="255" height="207" key="Github.ShareDialog" timestamp="1596302619189">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -198,30 +207,30 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="792" y="251" width="326" height="611" key="Github.UntrackedFilesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1596302623491" />
-    <state width="1878" height="277" key="GridCell.Tab.0.bottom" timestamp="1596567213035">
+    <state width="1878" height="277" key="GridCell.Tab.0.bottom" timestamp="1596573121123">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1878" height="277" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1596567213035" />
-    <state width="1878" height="277" key="GridCell.Tab.0.center" timestamp="1596567213034">
+    <state width="1878" height="277" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1596573121123" />
+    <state width="1878" height="277" key="GridCell.Tab.0.center" timestamp="1596573121123">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1878" height="277" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1596567213034" />
-    <state width="1878" height="277" key="GridCell.Tab.0.left" timestamp="1596567213034">
+    <state width="1878" height="277" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1596573121123" />
+    <state width="1878" height="277" key="GridCell.Tab.0.left" timestamp="1596573121123">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1878" height="277" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1596567213034" />
-    <state width="1878" height="277" key="GridCell.Tab.0.right" timestamp="1596567213034">
+    <state width="1878" height="277" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1596573121123" />
+    <state width="1878" height="277" key="GridCell.Tab.0.right" timestamp="1596573121123">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1878" height="277" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1596567213034" />
+    <state width="1878" height="277" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1596573121123" />
     <state x="443" y="131" width="1024" height="852" key="SettingsEditor" timestamp="1596557263775">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="443" y="131" width="1024" height="852" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1596557263775" />
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1596559870664">
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1596567429452">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1596559870664" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1596567429452" />
     <state x="677" y="452" width="546" height="217" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1596555410332">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

@@ -24,7 +24,7 @@ public class Path {
         this.name = name;
 
         // Initialize directory
-        this.directory = new File(parent, Utility.hexadecimal(this.name));
+        this.directory = new File(parent, Utility.encode(this.name));
     }
 
     /**

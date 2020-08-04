@@ -8,13 +8,12 @@ import nadav.tasher.storage.area.operations.RemoveTable;
 import nadav.tasher.storage.implementation.Operation;
 import nadav.tasher.storage.implementation.Path;
 import nadav.tasher.storage.server.Server;
+import nadav.tasher.storage.system.Utility;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public abstract class Embedded {
 
@@ -25,20 +24,18 @@ public abstract class Embedded {
         // Initialize the server socket
         Embedded.socket = new ServerSocket(port);
 
-        // Create a timer
-        Timer embedded = new Timer();
-
-        // Schedule a task
-        embedded.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                try {
+        // Create embedded thread
+        Thread embedded = new Thread(() -> {
+            // Handle client forever
+            try {
+                while (true)
                     Embedded.handle(Embedded.socket.accept());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+            } catch (Exception ignored) {
             }
-        }, 0, 10);
+        });
+
+        // Start embedded thread
+        embedded.start();
     }
 
     private static void handle(Socket socket) {
@@ -56,7 +53,7 @@ public abstract class Embedded {
                         @Override
                         public void success(String result) {
                             try {
-                                writer.write("+" + result + "\n");
+                                writer.write("+ " + result + "\n");
                                 writer.flush();
                             } catch (Exception ignored) {
                             }
@@ -65,7 +62,7 @@ public abstract class Embedded {
                         @Override
                         public void failure(Exception exception) {
                             try {
-                                writer.write("-" + exception.getMessage() + "\n");
+                                writer.write("- " + exception.getMessage() + "\n");
                                 writer.flush();
                             } catch (Exception ignored) {
                             }
@@ -85,23 +82,74 @@ public abstract class Embedded {
                             // Create context
                             Path path = Path.fromString(parts[1]);
 
-                            // Check number of parts
-                            if (parts.length == 3) {
-                                // Store value
-                                String data = parts[2];
-                            } else {
-                                switch (command.toLowerCase()) {
-                                    case "insert": {
-                                        // Check path type
-                                        Server.execute(new Operation("Insert a new path") {
+                            // Parse path type
+                            String type = path.getClass().getSimpleName().toLowerCase();
+
+                            switch (command.toLowerCase()) {
+                                case "insert": {
+                                    Server.execute(new Operation("Insert new " + type) {
+                                        @Override
+                                        public String execute() throws Exception {
+                                            // Insert path
+                                            path.insert();
+                                            // Return success
+                                            return "Inserted " + type;
+                                        }
+                                    }, callback);
+                                    break;
+                                }
+                                case "remove": {
+                                    Server.execute(new Operation("Remove " + type) {
+                                        @Override
+                                        public String execute() throws Exception {
+                                            // Remove path
+                                            path.remove();
+                                            // Return success
+                                            return "Removed " + type;
+                                        }
+                                    }, callback);
+                                    break;
+                                }
+                                case "exists": {
+                                    Server.execute(new Operation("Check " + type) {
+                                        @Override
+                                        public String execute() throws Exception {
+                                            // Check path
+                                            return String.valueOf(path.exists());
+                                        }
+                                    }, callback);
+                                    break;
+                                }
+                                case "value": {
+                                    if (parts.length == 3) {
+                                        Server.execute(new Operation("Write " + type) {
                                             @Override
                                             public String execute() throws Exception {
-                                                path.insert();
-                                                return null;
+                                                // Check type
+                                                if (!(path instanceof Application.Table.Row.Column))
+                                                    throw new Exception("Unable to write to type " + type + ".");
+
+                                                // Write column
+                                                ((Application.Table.Row.Column) path).set(parts[2]);
+
+                                                // Return success
+                                                return "OK";
                                             }
                                         }, callback);
-                                        break;
+                                    } else {
+                                        Server.execute(new Operation("Read " + type) {
+                                            @Override
+                                            public String execute() throws Exception {
+                                                // Check type
+                                                if (!(path instanceof Application.Table.Row.Column))
+                                                    throw new Exception("Unable to read from type " + type + ".");
+
+                                                // Read column
+                                                return ((Application.Table.Row.Column) path).get();
+                                            }
+                                        }, callback);
                                     }
+                                    break;
                                 }
                             }
                         }
