@@ -1,16 +1,16 @@
 package nadav.tasher.storage.operations.keystore;
 
 import nadav.tasher.storage.area.Area;
-import nadav.tasher.storage.area.Keystore;
 import nadav.tasher.storage.implementation.Operation;
 
-public class CreateKeystore extends Operation {
+public class Create extends Operation {
 
     private String area, keystore;
 
-    public CreateKeystore(String area, String keystore) {
+    public Create(String area, String keystore) {
         // Initialize the operation
         super("Create a new keystore \"" + keystore + "\" in area \"" + area + "\"");
+
         // Initialize the variables
         this.area = area;
         this.keystore = keystore;
@@ -27,12 +27,15 @@ public class CreateKeystore extends Operation {
             throw new Exception("Unable to create keystore. Area does not exist.");
 
         // Create the keystore object
-        Keystore keystore = area.keystore(this.keystore);
+        Area.Keystore keystore = area.keystore(this.keystore);
+
         // Make sure the keystore does not exists
+        if (keystore.exists())
+            // Throw exception
+            throw new Exception("Unable to create keystore. Keystore already exists.");
 
-
-        // Create the area
-        area.insert();
+        // Create the keystore
+        keystore.insert();
 
         // Return null
         return null;

@@ -10,6 +10,7 @@ public class Delete extends Operation {
     public Delete(String area) {
         // Initialize the operation
         super("Delete an area \"" + area + "\"");
+
         // Initialize the variables
         this.area = area;
     }

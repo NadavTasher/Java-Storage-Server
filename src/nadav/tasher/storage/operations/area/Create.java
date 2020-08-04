@@ -10,6 +10,7 @@ public class Create extends Operation {
     public Create(String area) {
         // Initialize the operation
         super("Create a new area \"" + area + "\"");
+
         // Initialize the variables
         this.area = area;
     }
