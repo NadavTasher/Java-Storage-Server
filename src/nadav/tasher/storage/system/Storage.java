@@ -8,7 +8,7 @@ import java.io.File;
 public abstract class Storage {
 
     // The storage root directory
-    public static final File ROOT = new File("/opt/storage");
+    public static final File ROOT = new File("out/test");
 
     /**
      * Initializes the storage system (Creates directories).
