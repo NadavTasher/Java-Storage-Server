@@ -38,10 +38,10 @@ public class Application extends Path {
     public static class Table extends Path {
 
         /**
-         * Keystore constructor.
+         * Table constructor.
          *
          * @param application Parent application
-         * @param name        Keystore name
+         * @param name        Table name
          */
         private Table(Application application, String name) {
             // Initialize path
@@ -51,22 +51,22 @@ public class Application extends Path {
         /**
          * Creates an entry object.
          *
-         * @param id Row ID
-         * @return Row object
+         * @param id Entry ID
+         * @return Entry object
          */
-        public Row row(String id) {
-            return new Row(this, id);
+        public Entry entry(String id) {
+            return new Entry(this, id);
         }
 
-        public static class Row extends Path {
+        public static class Entry extends Path {
 
             /**
-             * Row constructor.
+             * Entry constructor.
              *
              * @param table Parent keystore
-             * @param id    Row ID
+             * @param id    Entry ID
              */
-            private Row(Table table, String id) {
+            private Entry(Table table, String id) {
                 // Initialize path
                 super(table.getDirectory(), id);
             }
@@ -90,12 +90,12 @@ public class Application extends Path {
                 /**
                  * Column constructor.
                  *
-                 * @param row  Parent row
+                 * @param entry  Parent entry
                  * @param name Column name
                  */
-                private Column(Row row, String name) {
+                private Column(Entry entry, String name) {
                     // Initialize path
-                    super(row.getDirectory(), name);
+                    super(entry.getDirectory(), name);
 
                     // Initialize files
                     this.binary = new File(this.getDirectory(), "binary");

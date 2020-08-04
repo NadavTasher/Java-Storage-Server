@@ -1,19 +1,13 @@
 package nadav.tasher.storage.communication;
 
 import nadav.tasher.storage.area.Application;
-import nadav.tasher.storage.area.operations.InsertApplication;
-import nadav.tasher.storage.area.operations.InsertTable;
-import nadav.tasher.storage.area.operations.RemoveApplication;
-import nadav.tasher.storage.area.operations.RemoveTable;
 import nadav.tasher.storage.implementation.Operation;
 import nadav.tasher.storage.implementation.Path;
 import nadav.tasher.storage.server.Server;
-import nadav.tasher.storage.system.Utility;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
 
 public abstract class Embedded {
 
@@ -126,11 +120,11 @@ public abstract class Embedded {
                                             @Override
                                             public String execute() throws Exception {
                                                 // Check type
-                                                if (!(path instanceof Application.Table.Row.Column))
+                                                if (!(path instanceof Application.Table.Entry.Column))
                                                     throw new Exception("Unable to write to type " + type + ".");
 
                                                 // Write column
-                                                ((Application.Table.Row.Column) path).set(parts[2]);
+                                                ((Application.Table.Entry.Column) path).set(parts[2]);
 
                                                 // Return success
                                                 return "OK";
@@ -141,11 +135,11 @@ public abstract class Embedded {
                                             @Override
                                             public String execute() throws Exception {
                                                 // Check type
-                                                if (!(path instanceof Application.Table.Row.Column))
+                                                if (!(path instanceof Application.Table.Entry.Column))
                                                     throw new Exception("Unable to read from type " + type + ".");
 
                                                 // Read column
-                                                return ((Application.Table.Row.Column) path).get();
+                                                return ((Application.Table.Entry.Column) path).get();
                                             }
                                         }, callback);
                                     }
