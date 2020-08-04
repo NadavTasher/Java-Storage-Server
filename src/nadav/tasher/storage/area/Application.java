@@ -6,17 +6,17 @@ import nadav.tasher.storage.system.Storage;
 import java.io.File;
 import java.nio.file.Files;
 
-public class Area extends Path {
+public class Application extends Path {
 
     // Keystores
     private Table configuration;
 
     /**
-     * Area constructor.
+     * Application constructor.
      *
-     * @param name Area name
+     * @param name Application name
      */
-    public Area(String name) {
+    public Application(String name) {
         // Initialize path
         super(Storage.ROOT, name);
 
@@ -40,33 +40,33 @@ public class Area extends Path {
         /**
          * Keystore constructor.
          *
-         * @param area Parent area
-         * @param name Keystore name
+         * @param application Parent application
+         * @param name        Keystore name
          */
-        private Table(Area area, String name) {
+        private Table(Application application, String name) {
             // Initialize path
-            super(area.getDirectory(), name);
+            super(application.getDirectory(), name);
         }
 
         /**
          * Creates an entry object.
          *
-         * @param id Entry ID
-         * @return Entry object
+         * @param id Row ID
+         * @return Row object
          */
-        public Entry entry(String id) {
-            return new Entry(this, id);
+        public Row row(String id) {
+            return new Row(this, id);
         }
 
-        public static class Entry extends Path {
+        public static class Row extends Path {
 
             /**
-             * Entry constructor.
+             * Row constructor.
              *
              * @param table Parent keystore
-             * @param id       Entry ID
+             * @param id    Row ID
              */
-            private Entry(Table table, String id) {
+            private Row(Table table, String id) {
                 // Initialize path
                 super(table.getDirectory(), id);
             }
@@ -77,25 +77,25 @@ public class Area extends Path {
              * @param name Key name
              * @return Key object
              */
-            public Value value(String name) {
-                return new Value(this, name);
+            public Column column(String name) {
+                return new Column(this, name);
             }
 
-            public static class Value extends Path {
+            public static class Column extends Path {
 
                 // The entry's files
                 private File binary;
                 private File checksum;
 
                 /**
-                 * Key constructor.
+                 * Column constructor.
                  *
-                 * @param entry Parent entry
-                 * @param name  Key name
+                 * @param row  Parent row
+                 * @param name Column name
                  */
-                private Value(Entry entry, String name) {
+                private Column(Row row, String name) {
                     // Initialize path
-                    super(entry.getDirectory(), name);
+                    super(row.getDirectory(), name);
 
                     // Initialize files
                     this.binary = new File(this.getDirectory(), "binary");
@@ -105,7 +105,7 @@ public class Area extends Path {
                 /**
                  * Reads the value.
                  *
-                 * @return Value
+                 * @return Column
                  * @throws Exception Exception
                  */
                 public String get() throws Exception {
@@ -120,7 +120,7 @@ public class Area extends Path {
                 /**
                  * Writes the value.
                  *
-                 * @param contents Value
+                 * @param contents Column
                  * @throws Exception Exception
                  */
                 public void set(String contents) throws Exception {

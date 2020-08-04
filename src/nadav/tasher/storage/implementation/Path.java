@@ -1,5 +1,6 @@
 package nadav.tasher.storage.implementation;
 
+import nadav.tasher.storage.area.Application;
 import nadav.tasher.storage.system.Utility;
 
 import java.io.File;
@@ -23,7 +24,7 @@ public class Path {
         this.name = name;
 
         // Initialize directory
-        this.directory = new File(parent, Utility.toHexadecimal(this.name));
+        this.directory = new File(parent, Utility.hexadecimal(this.name));
     }
 
     /**
@@ -81,5 +82,46 @@ public class Path {
 
         // Remove the path
         Utility.remove(this.directory);
+    }
+
+    /**
+     * Creates a path from a context string.
+     *
+     * @param string Context string
+     * @return Path
+     */
+    public static Path fromString(String string) {
+        // Create the returned path
+        Path path = null;
+
+        // Split the context into parts
+        String[] context = string.split(":", 4);
+
+        // Check length of parts
+        if (context.length >= 1) {
+            // Create new application
+            path = new Application(context[0]);
+        }
+
+        // Check length of parts
+        if (context.length >= 2) {
+            // Create new table
+            path = ((Application) path).table(context[1]);
+        }
+
+        // Check length of parts
+        if (context.length >= 3) {
+            // Create new row
+            path = ((Application.Table) path).row(context[2]);
+        }
+
+        // Check length of parts
+        if (context.length >= 4) {
+            // Create new row
+            path = ((Application.Table.Row) path).column(context[3]);
+        }
+
+        // Return the created path
+        return path;
     }
 }

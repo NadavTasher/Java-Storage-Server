@@ -1,6 +1,6 @@
-package nadav.tasher.storage.operations;
+package nadav.tasher.storage.area.operations;
 
-import nadav.tasher.storage.area.Area;
+import nadav.tasher.storage.area.Application;
 import nadav.tasher.storage.implementation.Operation;
 
 public class RemoveTable extends Operation {
@@ -18,16 +18,16 @@ public class RemoveTable extends Operation {
 
     @Override
     public String execute() throws Exception {
-        // Create the area object
-        Area area = new Area(this.area);
+        // Create the application object
+        Application application = new Application(this.area);
 
-        // Make sure the area exists
-        if (!area.exists())
+        // Make sure the application exists
+        if (!application.exists())
             // Throw exception
-            throw new Exception("Unable to delete keystore. Area does not exist.");
+            throw new Exception("Unable to delete keystore. Application does not exist.");
 
         // Create the keystore object
-        Area.Table table = area.table(this.keystore);
+        Application.Table table = application.table(this.keystore);
 
         // Make sure the keystore does not exists
         if (!table.exists())

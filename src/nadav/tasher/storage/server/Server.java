@@ -1,18 +1,16 @@
 package nadav.tasher.storage.server;
 
-import nadav.tasher.storage.area.Area;
 import nadav.tasher.storage.implementation.Operation;
-import nadav.tasher.storage.implementation.Tuple;
+import nadav.tasher.storage.system.Utility;
 
 import java.util.ArrayDeque;
-import java.util.ArrayList;
 import java.util.Queue;
 
 public abstract class Server {
 
     private static boolean running = true;
 
-    private static final Queue<Tuple<Operation, Callback>> queue = new ArrayDeque<>();
+    private static final Queue<Utility.Tuple<Operation, Callback>> queue = new ArrayDeque<>();
 
     public static void initialize() {
         // Execute queue operations
@@ -20,7 +18,7 @@ public abstract class Server {
             // Check if queue has pending operations
             if (!Server.queue.isEmpty()) {
                 // Pop the pending operation
-                Tuple<Operation, Callback> entry = Server.queue.remove();
+                Utility.Tuple<Operation, Callback> entry = Server.queue.remove();
 
                 // Make sure the entry is not null
                 if (entry == null)
@@ -56,7 +54,7 @@ public abstract class Server {
      * @param callback  Callback to call
      */
     public static void execute(Operation operation, Callback callback) {
-        Server.queue.add(new Tuple<>(operation, callback));
+        Server.queue.add(new Utility.Tuple<>(operation, callback));
     }
 
     /**
