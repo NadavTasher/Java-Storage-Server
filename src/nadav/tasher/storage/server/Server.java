@@ -16,4 +16,8 @@ public abstract class Server {
 
     }
 
+    public static boolean isRunning(){
+        return true;
+    }
+
 }

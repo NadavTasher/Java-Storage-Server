@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f5167fad-0117-4231-b42e-641b19a3f094" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/area/Keystore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/area/Keystore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/communication/Embedded.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/communication/Embedded.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/server/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +65,7 @@
       <updated>1596302261903</updated>
       <workItem from="1596302265330" duration="985000" />
       <workItem from="1596479946349" duration="4046000" />
-      <workItem from="1596521995536" duration="277000" />
+      <workItem from="1596521995536" duration="808000" />
     </task>
     <task id="LOCAL-00001" summary="More base work on all classes">
       <created>1596482527249</created>
@@ -74,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596482527250</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Started keystore work">
+      <created>1596522308157</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1596522308157</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -82,7 +89,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="More base work on all classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="More base work on all classes" />
+    <MESSAGE value="Started keystore work" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started keystore work" />
   </component>
   <component name="WindowStateProjectService">
     <state x="692" y="357" width="525" height="400" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596480102797">
@@ -93,10 +101,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="693" y="303" width="524" height="508" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1596302990304" />
-    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2" timestamp="1596482526738">
+    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2" timestamp="1596522307641">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1596482526738" />
+    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1596522307641" />
     <state x="832" y="453" width="255" height="207" key="Github.ShareDialog" timestamp="1596302619189">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -105,9 +113,9 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="792" y="251" width="326" height="611" key="Github.UntrackedFilesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1596302623491" />
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1596482527595">
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1596522308800">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1596482527595" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1596522308800" />
   </component>
 </project>
