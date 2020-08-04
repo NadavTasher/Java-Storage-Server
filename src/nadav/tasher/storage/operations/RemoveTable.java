@@ -1,13 +1,13 @@
-package nadav.tasher.storage.operations.table.entry;
+package nadav.tasher.storage.operations;
 
 import nadav.tasher.storage.area.Area;
 import nadav.tasher.storage.implementation.Operation;
 
-public class Delete extends Operation {
+public class RemoveTable extends Operation {
 
     private String area, keystore;
 
-    public Delete(String area, String keystore) {
+    public RemoveTable(String area, String keystore) {
         // Initialize the operation
         super("Delete a keystore \"" + keystore + "\" in area \"" + area + "\"");
 

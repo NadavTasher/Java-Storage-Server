@@ -1,13 +1,13 @@
-package nadav.tasher.storage.operations.area;
+package nadav.tasher.storage.operations;
 
 import nadav.tasher.storage.area.Area;
 import nadav.tasher.storage.implementation.Operation;
 
-public class Create extends Operation {
+public class InsertArea extends Operation {
 
     private String area;
 
-    public Create(String area) {
+    public InsertArea(String area) {
         // Initialize the operation
         super("Create a new area \"" + area + "\"");
 

@@ -1,5 +1,7 @@
 package nadav.tasher.storage.communication;
 
+import nadav.tasher.storage.operations.InsertArea;
+import nadav.tasher.storage.operations.InsertTable;
 import nadav.tasher.storage.server.Server;
 
 import java.io.*;
@@ -85,6 +87,19 @@ public class CommandLine {
                 // Create context
                 Context context = new Context(parts[1]);
 
+                // Create callback
+                Server.Callback callback = new Server.Callback() {
+                    @Override
+                    public void success(String result) {
+
+                    }
+
+                    @Override
+                    public void failure(Exception exception) {
+
+                    }
+                };
+
                 // Check number of parts
                 if (parts.length == 3) {
                     // Store value
@@ -93,8 +108,11 @@ public class CommandLine {
                     switch (command.toLowerCase()) {
                         case "insert": {
                             // Check context type
-                            switch (context.type){
-                                case Area -> Server.
+                            switch (context.type) {
+                                case Area -> Server.execute(new InsertArea(context.getArea()), callback);
+                                case Table -> Server.execute(new InsertTable(context.getArea(), context.getTable()), callback);
+                                case Entry -> Server.execute(new InsertTable(context.getArea()), callback);
+                                case Value -> Server.execute(new Create(context.getArea()), callback);
                             }
                             break;
                         }
@@ -122,75 +140,5 @@ public class CommandLine {
             } catch (Exception ignored) {
             }
         }
-
-        private static boolean match(String[] parts, int index, String expected) {
-            return parts[index].toLowerCase().equals(expected.toLowerCase());
-        }
-
-        private static class Context {
-
-            private Type type;
-
-            private String area, table, entry, value;
-
-            /**
-             * Context constructor.
-             *
-             * @param context Context string
-             */
-            private Context(String context) {
-                // Split the context into parts
-                String[] parts = context.split(":");
-                // Check length of parts
-                if (parts.length >= 1) {
-                    // Create new context with type area
-                    this.type = Type.Area;
-                    // Set area
-                    this.area = parts[0];
-                }
-                if (parts.length >= 2) {
-                    // Create new context with type area
-                    this.type = Type.Table;
-                    // Set area
-                    this.table = parts[1];
-                }
-                if (parts.length >= 3) {
-                    // Create new context with type area
-                    this.type = Type.Entry;
-                    // Set area
-                    this.entry = parts[2];
-                }
-                if (parts.length >= 4) {
-                    // Create new context with type area
-                    this.type = Type.Value;
-                    // Set area
-                    this.value = parts[3];
-                }
-            }
-
-            public String getArea() {
-                return area;
-            }
-
-            public String getTable() {
-                return table;
-            }
-
-            public String getEntry() {
-                return entry;
-            }
-
-            public String getValue() {
-                return value;
-            }
-
-            private static enum Type {
-                Area,
-                Table,
-                Entry,
-                Value
-            }
-        }
     }
-
 }

@@ -62,7 +62,7 @@ public abstract class Server {
     /**
      * This interface is used to handle operation execution results.
      */
-    interface Callback {
+    public interface Callback {
 
         /**
          * Handles operation successes.

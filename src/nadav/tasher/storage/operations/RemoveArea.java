@@ -1,13 +1,13 @@
-package nadav.tasher.storage.operations.area;
+package nadav.tasher.storage.operations;
 
 import nadav.tasher.storage.area.Area;
 import nadav.tasher.storage.implementation.Operation;
 
-public class Delete extends Operation {
+public class RemoveArea extends Operation {
 
     private String area;
 
-    public Delete(String area) {
+    public RemoveArea(String area) {
         // Initialize the operation
         super("Delete an area \"" + area + "\"");
 
