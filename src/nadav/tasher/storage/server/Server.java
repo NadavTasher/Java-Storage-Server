@@ -1,7 +1,7 @@
 package nadav.tasher.storage.server;
 
 import nadav.tasher.storage.area.Area;
-import nadav.tasher.storage.operation.Operation;
+import nadav.tasher.storage.implementation.Operation;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

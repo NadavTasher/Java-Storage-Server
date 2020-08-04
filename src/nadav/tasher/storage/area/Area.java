@@ -1,50 +1,45 @@
 package nadav.tasher.storage.area;
 
+import nadav.tasher.storage.implementation.Path;
 import nadav.tasher.storage.system.Storage;
-import nadav.tasher.storage.system.Utility;
 
 import java.io.File;
-import java.util.ArrayList;
 
-public class Area {
-
-    // The area's name
-    private String name;
-
-    // The directory in which files get stored
-    private File directory;
+public class Area extends Path {
 
     // Keystores
     private Keystore configuration;
-    private ArrayList<Keystore> keystores;
 
-    public Area(String name) throws Exception {
-        // Initialize name
-        this.name = name;
+    /**
+     * Area constructor.
+     *
+     * @param name Area name
+     */
+    public Area(String name) {
+        // Initialize path
+        super(Storage.ROOT, name);
 
-        // Initialize directory
-        this.directory = new File(Storage.ROOT, Utility.toHexadecimal(name));
-
-        // Initialize keystores
-        this.keystores = new ArrayList<>();
-
-        // Initialize in filesystem
-        this.initialize();
+        // Initialize the configuration keystore
+        this.configuration = new Keystore(this, "configuration");
     }
 
     /**
-     * Initializes the area in the filesystem (Creates directories).
+     * Creates a keystore object.
+     *
+     * @param name Keystore name
+     * @return Keystore object
      */
-    private void initialize() throws Exception {
-        // Make sure the directory exists
-        if (!this.directory.exists())
-            // Create the directory
-            if (!this.directory.mkdir())
-                // Throw exception
-                throw new Exception("Unable to create root directory. Check your permissions.");
-
-        // Initialize the configuration keystore
-        this.configuration = new Keystore("configuration");
+    public Keystore keystore(String name) {
+        // Create the keystore object
+        return new Keystore(this, name);
     }
 
+    /**
+     * Returns the area's directory.
+     *
+     * @return Area directory
+     */
+    public File getDirectory() {
+        return super.getDirectory();
+    }
 }
