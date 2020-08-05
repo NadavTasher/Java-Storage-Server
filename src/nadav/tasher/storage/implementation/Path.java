@@ -111,13 +111,13 @@ public class Path {
         // Check length of parts
         if (context.length >= 3) {
             // Create new row
-            path = ((Application.Table) path).entry(context[2]);
+            path = ((Application.Table) path).row(context[2]);
         }
 
         // Check length of parts
         if (context.length >= 4) {
             // Create new row
-            path = ((Application.Table.Row) path).column(context[3]);
+            path = ((Application.Table.Row) path).cell(context[3]);
         }
 
         // Return the created path

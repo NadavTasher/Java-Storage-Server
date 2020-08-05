@@ -7,9 +7,6 @@ import java.nio.file.Files;
 
 public class Application extends Path {
 
-    // Keystores
-    private Table configuration;
-
     /**
      * Application constructor.
      *
@@ -18,19 +15,16 @@ public class Application extends Path {
     public Application(String name) {
         // Initialize path
         super(Storage.ROOT, name);
-
-        // Initialize the configuration keystore
-        this.configuration = new Table(this, "configuration");
     }
 
     /**
-     * Creates a keystore object.
+     * Creates a table object.
      *
-     * @param name Keystore name
-     * @return Keystore object
+     * @param name Table name
+     * @return Table object
      */
     public Table table(String name) {
-        // Create the keystore object
+        // Create the table object
         return new Table(this, name);
     }
 
@@ -48,12 +42,12 @@ public class Application extends Path {
         }
 
         /**
-         * Creates an entry object.
+         * Creates an row object.
          *
          * @param id Row ID
          * @return Row object
          */
-        public Row entry(String id) {
+        public Row row(String id) {
             return new Row(this, id);
         }
 
@@ -71,26 +65,26 @@ public class Application extends Path {
             }
 
             /**
-             * Creates a key object.
+             * Creates a cell object.
              *
-             * @param name Key name
-             * @return Key object
+             * @param name Cell name
+             * @return Cell object
              */
-            public Cell column(String name) {
+            public Cell cell(String name) {
                 return new Cell(this, name);
             }
 
             public static class Cell extends Path {
 
-                // The entry's files
+                // The row's files
                 private File binary;
                 private File checksum;
 
                 /**
                  * Cell constructor.
                  *
-                 * @param row Parent row
-                 * @param name  Cell name
+                 * @param row  Parent row
+                 * @param name Cell name
                  */
                 private Cell(Row row, String name) {
                     // Initialize path
