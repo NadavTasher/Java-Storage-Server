@@ -29,6 +29,6 @@ public class Remove extends Operation {
         path.remove();
 
         // Return success
-        return null;
+        return "OK";
     }
 }

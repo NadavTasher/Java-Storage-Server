@@ -73,7 +73,7 @@ public abstract class Embedded {
                                 // Write message
                                 writer.write(prefix);
                                 writer.write(32);
-                                writer.write(message.toString());
+                                writer.write(String.valueOf(message));
                                 writer.write(10);
 
                                 // Flush

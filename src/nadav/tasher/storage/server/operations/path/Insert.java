@@ -29,6 +29,6 @@ public class Insert extends Operation {
         path.insert();
 
         // Return success
-        return null;
+        return "OK";
     }
 }

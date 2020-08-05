@@ -38,6 +38,6 @@ public class Write extends Operation {
         ((Application.Table.Row.Cell) path).write(argument);
 
         // Return success
-        return null;
+        return "OK";
     }
 }
