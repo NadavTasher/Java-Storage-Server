@@ -2,22 +2,17 @@ package nadav.tasher.storage.implementation;
 
 public class Operation {
 
-    protected String description;
+    protected final Path path;
+    protected final String argument;
 
     /**
      * Operation constructor.
-     * @param description Description
+     * @param path Path to operate on
+     * @param argument Argument to work with
      */
-    protected Operation(String description) {
-        this.description = description;
-    }
-
-    /**
-     * Returns the description.
-     * @return Description
-     */
-    public String getDescription() {
-        return this.description;
+    public Operation(Path path, String argument){
+        this.path = path;
+        this.argument = argument;
     }
 
     /**

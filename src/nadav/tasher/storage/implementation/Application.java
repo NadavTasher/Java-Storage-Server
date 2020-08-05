@@ -1,6 +1,5 @@
-package nadav.tasher.storage.area;
+package nadav.tasher.storage.implementation;
 
-import nadav.tasher.storage.implementation.Path;
 import nadav.tasher.storage.system.Storage;
 
 import java.io.File;
@@ -51,22 +50,22 @@ public class Application extends Path {
         /**
          * Creates an entry object.
          *
-         * @param id Entry ID
-         * @return Entry object
+         * @param id Row ID
+         * @return Row object
          */
-        public Entry entry(String id) {
-            return new Entry(this, id);
+        public Row entry(String id) {
+            return new Row(this, id);
         }
 
-        public static class Entry extends Path {
+        public static class Row extends Path {
 
             /**
-             * Entry constructor.
+             * Row constructor.
              *
-             * @param table Parent keystore
-             * @param id    Entry ID
+             * @param table Parent table
+             * @param id    Row ID
              */
-            private Entry(Table table, String id) {
+            private Row(Table table, String id) {
                 // Initialize path
                 super(table.getDirectory(), id);
             }
@@ -77,25 +76,25 @@ public class Application extends Path {
              * @param name Key name
              * @return Key object
              */
-            public Column column(String name) {
-                return new Column(this, name);
+            public Cell column(String name) {
+                return new Cell(this, name);
             }
 
-            public static class Column extends Path {
+            public static class Cell extends Path {
 
                 // The entry's files
                 private File binary;
                 private File checksum;
 
                 /**
-                 * Column constructor.
+                 * Cell constructor.
                  *
-                 * @param entry  Parent entry
-                 * @param name Column name
+                 * @param row Parent row
+                 * @param name  Cell name
                  */
-                private Column(Entry entry, String name) {
+                private Cell(Row row, String name) {
                     // Initialize path
-                    super(entry.getDirectory(), name);
+                    super(row.getDirectory(), name);
 
                     // Initialize files
                     this.binary = new File(this.getDirectory(), "binary");
@@ -105,13 +104,13 @@ public class Application extends Path {
                 /**
                  * Reads the value.
                  *
-                 * @return Column
+                 * @return Cell
                  * @throws Exception Exception
                  */
-                public String get() throws Exception {
+                public String read() throws Exception {
                     // Make sure the binary file exists
                     if (!this.binary.exists())
-                        this.set(new String());
+                        this.write(new String());
 
                     // Read the file
                     return new String(Files.readAllBytes(this.binary.toPath()));
@@ -120,10 +119,10 @@ public class Application extends Path {
                 /**
                  * Writes the value.
                  *
-                 * @param contents Column
+                 * @param contents Cell
                  * @throws Exception Exception
                  */
-                public void set(String contents) throws Exception {
+                public void write(String contents) throws Exception {
                     // Make sure the binary file exists
                     if (!this.binary.exists())
                         // Create binary file

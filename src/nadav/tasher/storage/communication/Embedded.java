@@ -1,9 +1,14 @@
 package nadav.tasher.storage.communication;
 
-import nadav.tasher.storage.area.Application;
+import nadav.tasher.storage.implementation.Application;
 import nadav.tasher.storage.implementation.Operation;
 import nadav.tasher.storage.implementation.Path;
 import nadav.tasher.storage.server.Server;
+import nadav.tasher.storage.server.operations.cell.Read;
+import nadav.tasher.storage.server.operations.cell.Write;
+import nadav.tasher.storage.server.operations.path.Exists;
+import nadav.tasher.storage.server.operations.path.Insert;
+import nadav.tasher.storage.server.operations.path.Remove;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -66,95 +71,75 @@ public abstract class Embedded {
                     // Listen for input forever
                     while (true) {
                         // Split input to parts divided by a whitespace
-                        String[] parts = reader.readLine().split(" ", 3);
+                        String[] slices = reader.readLine().split(" ", 3);
 
-                        // Check number of parts
-                        if (parts.length >= 2) {
-                            // Store command
-                            String command = parts[0];
+                        // Initialize variables
+                        String command = null, path = null, argument = null;
 
-                            // Create context
-                            Path path = Path.fromString(parts[1]);
+                        // Check slices length
+                        if (slices.length >= 1)
+                            command = slices[0];
 
-                            // Parse path type
-                            String type = path.getClass().getSimpleName().toLowerCase();
+                        if (slices.length >= 2)
+                            path = slices[1];
 
-                            switch (command.toLowerCase()) {
-                                case "insert": {
-                                    Server.execute(new Operation("Insert new " + type) {
-                                        @Override
-                                        public String execute() throws Exception {
-                                            // Insert path
-                                            path.insert();
-                                            // Return success
-                                            return "Inserted " + type;
-                                        }
-                                    }, callback);
-                                    break;
-                                }
-                                case "remove": {
-                                    Server.execute(new Operation("Remove " + type) {
-                                        @Override
-                                        public String execute() throws Exception {
-                                            // Remove path
-                                            path.remove();
-                                            // Return success
-                                            return "Removed " + type;
-                                        }
-                                    }, callback);
-                                    break;
-                                }
-                                case "exists": {
-                                    Server.execute(new Operation("Check " + type) {
-                                        @Override
-                                        public String execute() throws Exception {
-                                            // Check path
-                                            return String.valueOf(path.exists());
-                                        }
-                                    }, callback);
-                                    break;
-                                }
-                                case "value": {
-                                    if (parts.length == 3) {
-                                        Server.execute(new Operation("Write " + type) {
-                                            @Override
-                                            public String execute() throws Exception {
-                                                // Check type
-                                                if (!(path instanceof Application.Table.Entry.Column))
-                                                    throw new Exception("Unable to write to type " + type + ".");
+                        if (slices.length >= 3)
+                            argument = slices[2];
 
-                                                // Write column
-                                                ((Application.Table.Entry.Column) path).set(parts[2]);
+                        // Copy to effective finals
 
-                                                // Return success
-                                                return "OK";
-                                            }
-                                        }, callback);
-                                    } else {
-                                        Server.execute(new Operation("Read " + type) {
-                                            @Override
-                                            public String execute() throws Exception {
-                                                // Check type
-                                                if (!(path instanceof Application.Table.Entry.Column))
-                                                    throw new Exception("Unable to read from type " + type + ".");
+                        // Make sure command is not null
+                        if (command == null)
+                            continue;
 
-                                                // Read column
-                                                return ((Application.Table.Entry.Column) path).get();
-                                            }
-                                        }, callback);
-                                    }
-                                    break;
-                                }
-                            }
+                        // Make sure path is not null
+                        if (path == null)
+                            continue;
+
+                        // Parse path from string
+                        Path mPath = Path.fromString(path);
+
+                        // Switch between commands
+                        if (command.equals("+")) {
+                            // Insert a new insertion operation to the queue
+                            Server.execute(new Insert(mPath, argument), callback);
+
+                            // Continue
+                            continue;
+                        }
+                        if (command.equals("-")) {
+                            // Insert a new remove operation to the queue
+                            Server.execute(new Remove(mPath, argument), callback);
+
+                            // Continue
+                            continue;
+                        }
+                        if (command.equals("?")) {
+                            // Insert a new remove operation to the queue
+                            Server.execute(new Exists(mPath, argument), callback);
+
+                            // Continue
+                            continue;
+                        }
+                        if (command.equals("<")) {
+                            // Insert a new read operation to the queue
+                            Server.execute(new Read(mPath, argument), callback);
+
+                            // Continue
+                            continue;
+                        }
+                        if (command.equals(">")) {
+                            // Insert a new write operation to the queue
+                            Server.execute(new Write(mPath, argument), callback);
+
+                            // Continue
+                            continue;
                         }
                     }
                 } catch (Exception ignored) {
                 }
             }
         });
-
-        // Set daemon
-        client.setDaemon(true);
 
         // Start client thread
         client.start();

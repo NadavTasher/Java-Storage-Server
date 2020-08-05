@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5167fad-0117-4231-b42e-641b19a3f094" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/server/operations/cell/Read.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/server/operations/cell/Write.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/server/operations/path/Exists.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/server/operations/path/Insert.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/server/operations/path/Remove.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/area/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/area/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/area/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/implementation/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/area/operations/InsertApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/area/operations/InsertTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/area/operations/RemoveApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/area/operations/RemoveTable.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/communication/Embedded.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/communication/Embedded.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/implementation/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/implementation/Operation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/implementation/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/implementation/Path.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/system/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/system/Utility.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,14 +58,16 @@
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/nadav/tasher/storage/operations/keystore/entry" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="nadav.tasher.storage.operation.operations.keystore" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/.idea/modules" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="nadav.tasher.storage.server.operations.cell" />
+      <recent name="nadav.tasher.storage.server.operations" />
+      <recent name="nadav.tasher.storage.operation.operations.keystore" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/nadav/tasher/storage/operations/keystore/entry" />
     </key>
   </component>
   <component name="RunManager">
@@ -88,7 +101,9 @@
       <workItem from="1596479946349" duration="4046000" />
       <workItem from="1596521995536" duration="1219000" />
       <workItem from="1596530246036" duration="14096000" />
-      <workItem from="1596553710952" duration="15352000" />
+      <workItem from="1596553710952" duration="15960000" />
+      <workItem from="1596610983529" duration="7605000" />
+      <workItem from="1596619421450" duration="470000" />
     </task>
     <task id="LOCAL-00001" summary="More base work on all classes">
       <created>1596482527249</created>
@@ -167,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596574159099</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="General progress">
+      <created>1596575427887</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1596575427887</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,22 +211,22 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="692" y="357" width="525" height="400" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1596480102797" />
-    <state x="768" y="262" width="374" height="590" key="#com.intellij.ide.util.MemberChooser" timestamp="1596558343081">
+    <state x="768" y="262" width="374" height="590" key="#com.intellij.ide.util.MemberChooser" timestamp="1596616748575">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="768" y="262" width="374" height="590" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1596558343081" />
-    <state x="576" y="27" width="758" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1596575067390">
+    <state x="768" y="262" width="374" height="590" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1596616748575" />
+    <state x="576" y="27" width="758" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1596616591572">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="576" y="27" width="758" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1596575067390" />
+    <state x="576" y="27" width="758" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1596616591572" />
     <state x="693" y="303" width="524" height="508" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596559384037">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="693" y="303" width="524" height="508" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1596559384037" />
-    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2" timestamp="1596574158777">
+    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2" timestamp="1596575427577">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1596574158777" />
+    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1596575427577" />
     <state x="832" y="453" width="255" height="207" key="Github.ShareDialog" timestamp="1596302619189">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -233,13 +255,17 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="443" y="131" width="1024" height="852" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1596557263775" />
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1596574159282">
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1596575428269">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1596574159282" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1596575428269" />
     <state x="677" y="452" width="546" height="217" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1596555410332">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="677" y="452" width="546" height="217" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.27.1920.1053@0.27.1920.1053" timestamp="1596555410332" />
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1596619371381">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1596619371381" />
   </component>
 </project>

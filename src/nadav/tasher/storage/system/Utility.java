@@ -70,7 +70,7 @@ public abstract class Utility {
          * Tuple constructor.
          *
          * @param key   Key
-         * @param value Column
+         * @param value Cell
          */
         public Tuple(K key, V value) {
             // Initialize variables
@@ -90,7 +90,7 @@ public abstract class Utility {
         /**
          * Returns the value.
          *
-         * @return Column
+         * @return Cell
          */
         public V getValue() {
             return value;

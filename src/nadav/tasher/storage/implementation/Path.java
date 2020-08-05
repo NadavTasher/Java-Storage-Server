@@ -1,6 +1,5 @@
 package nadav.tasher.storage.implementation;
 
-import nadav.tasher.storage.area.Application;
 import nadav.tasher.storage.system.Utility;
 
 import java.io.File;
@@ -118,7 +117,7 @@ public class Path {
         // Check length of parts
         if (context.length >= 4) {
             // Create new row
-            path = ((Application.Table.Entry) path).column(context[3]);
+            path = ((Application.Table.Row) path).column(context[3]);
         }
 
         // Return the created path
