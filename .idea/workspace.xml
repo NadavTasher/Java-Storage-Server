@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5167fad-0117-4231-b42e-641b19a3f094" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Storage_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Build_and_Run.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Run_in_IDEA.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/communication/Embedded.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/communication/Embedded.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/server/operations/cell/Write.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/server/operations/cell/Write.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/server/operations/path/Insert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/server/operations/path/Insert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/server/operations/path/Remove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/server/operations/path/Remove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/system/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/system/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +42,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/nadav/tasher/storage/operations/keystore/entry" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Dockerfile" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -61,20 +62,14 @@
       <recent name="$PROJECT_DIR$/src/nadav/tasher/storage/operations/keystore/entry" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="nadav.tasher.storage.Main" />
-      <module name="Storage" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Docker.Build and Run">
+    <list>
+      <item itemvalue="Application.Run in IDEA" />
+      <item itemvalue="Docker.Build and Run" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Run in IDEA" />
       </list>
     </recent_temporary>
   </component>
@@ -94,7 +89,7 @@
       <workItem from="1596530246036" duration="14096000" />
       <workItem from="1596553710952" duration="15960000" />
       <workItem from="1596610983529" duration="7605000" />
-      <workItem from="1596619421450" duration="1488000" />
+      <workItem from="1596619421450" duration="2517000" />
     </task>
     <task id="LOCAL-00001" summary="More base work on all classes">
       <created>1596482527249</created>
@@ -208,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596620617252</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Operation updates">
+      <created>1596620967774</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1596620967774</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,9 +228,14 @@
     <MESSAGE value="Storage changes" />
     <MESSAGE value="Javadoc updates" />
     <MESSAGE value="New output writer" />
-    <option name="LAST_COMMIT_MESSAGE" value="New output writer" />
+    <MESSAGE value="Operation updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Operation updates" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596621938062">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1596621938062" />
     <state x="692" y="357" width="525" height="400" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596480102797">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -237,6 +244,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="768" y="262" width="374" height="590" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1596616748575" />
+    <state x="682" y="353" width="525" height="422" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1596621579285">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="682" y="353" width="525" height="422" key="#com.intellij.ide.util.TreeClassChooserDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1596621579285" />
     <state x="576" y="27" width="758" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1596616591572">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -245,10 +256,14 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="693" y="303" width="524" height="508" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1596559384037" />
-    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2" timestamp="1596620616918">
+    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2" timestamp="1596620967456">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1596620616918" />
+    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1596620967456" />
+    <state x="743" y="297" width="424" height="519" key="FileChooserDialogImpl" timestamp="1596621211574">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="743" y="297" width="424" height="519" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1596621211574" />
     <state x="832" y="453" width="255" height="207" key="Github.ShareDialog" timestamp="1596302619189">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -257,30 +272,34 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="792" y="251" width="326" height="611" key="Github.UntrackedFilesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1596302623491" />
-    <state width="1878" height="277" key="GridCell.Tab.0.bottom" timestamp="1596620736009">
+    <state width="1878" height="277" key="GridCell.Tab.0.bottom" timestamp="1596621737580">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1878" height="277" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1596620736009" />
-    <state width="1878" height="277" key="GridCell.Tab.0.center" timestamp="1596620736008">
+    <state width="1878" height="277" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1596621737580" />
+    <state width="1878" height="277" key="GridCell.Tab.0.center" timestamp="1596621737579">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1878" height="277" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1596620736008" />
-    <state width="1878" height="277" key="GridCell.Tab.0.left" timestamp="1596620736007">
+    <state width="1878" height="277" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1596621737579" />
+    <state width="1878" height="277" key="GridCell.Tab.0.left" timestamp="1596621737578">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1878" height="277" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1596620736007" />
-    <state width="1878" height="277" key="GridCell.Tab.0.right" timestamp="1596620736009">
+    <state width="1878" height="277" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1596621737578" />
+    <state width="1878" height="277" key="GridCell.Tab.0.right" timestamp="1596621737580">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1878" height="277" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1596620736009" />
-    <state x="443" y="131" width="1024" height="852" key="SettingsEditor" timestamp="1596557263775">
+    <state width="1878" height="277" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1596621737580" />
+    <state x="443" y="131" width="1024" height="852" key="SettingsEditor" timestamp="1596621660928">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="443" y="131" width="1024" height="852" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1596557263775" />
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1596620617625">
+    <state x="443" y="131" width="1024" height="852" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1596621660928" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1596620968078">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1596620617625" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1596620968078" />
+    <state x="862" y="461" width="186" height="190" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize" timestamp="1596621935934">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="862" y="461" width="186" height="190" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize/0.27.1920.1053@0.27.1920.1053" timestamp="1596621935934" />
     <state x="677" y="452" width="546" height="217" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1596555410332">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
