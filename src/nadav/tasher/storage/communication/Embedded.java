@@ -51,17 +51,32 @@ public abstract class Embedded {
                     Server.Callback callback = new Server.Callback() {
                         @Override
                         public void success(String result) {
-                            try {
-                                writer.write("+ " + result + "\n");
-                                writer.flush();
-                            } catch (Exception ignored) {
-                            }
+                            write(result);
                         }
 
                         @Override
                         public void failure(Exception exception) {
+                            write(exception);
+                        }
+
+                        public void write(Object message) {
                             try {
-                                writer.write("- " + exception.getMessage() + "\n");
+                                // Initialize prefix
+                                String prefix = "?";
+
+                                // Check message type
+                                if (message instanceof Exception)
+                                    prefix = "-";
+                                if (message instanceof String)
+                                    prefix = "+";
+
+                                // Write message
+                                writer.write(prefix);
+                                writer.write(32);
+                                writer.write(message.toString());
+                                writer.write(10);
+
+                                // Flush
                                 writer.flush();
                             } catch (Exception ignored) {
                             }

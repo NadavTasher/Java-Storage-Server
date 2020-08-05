@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5167fad-0117-4231-b42e-641b19a3f094" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/system/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/system/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/communication/Embedded.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/communication/Embedded.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +90,7 @@
       <workItem from="1596530246036" duration="14096000" />
       <workItem from="1596553710952" duration="15960000" />
       <workItem from="1596610983529" duration="7605000" />
-      <workItem from="1596619421450" duration="720000" />
+      <workItem from="1596619421450" duration="1168000" />
     </task>
     <task id="LOCAL-00001" summary="More base work on all classes">
       <created>1596482527249</created>
@@ -182,7 +183,21 @@
       <option name="project" value="LOCAL" />
       <updated>1596620071071</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Storage changes">
+      <created>1596620174962</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1596620174962</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Javadoc updates">
+      <created>1596620311459</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1596620311459</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,7 +212,9 @@
     <MESSAGE value="More work on context" />
     <MESSAGE value="New comm" />
     <MESSAGE value="General progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="General progress" />
+    <MESSAGE value="Storage changes" />
+    <MESSAGE value="Javadoc updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Javadoc updates" />
   </component>
   <component name="WindowStateProjectService">
     <state x="692" y="357" width="525" height="400" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596480102797">
@@ -216,10 +233,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="693" y="303" width="524" height="508" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1596559384037" />
-    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2" timestamp="1596620070540">
+    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2" timestamp="1596620311144">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1596620070540" />
+    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1596620311144" />
     <state x="832" y="453" width="255" height="207" key="Github.ShareDialog" timestamp="1596302619189">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -248,10 +265,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="443" y="131" width="1024" height="852" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1596557263775" />
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1596620072491">
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1596620311747">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1596620072491" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1596620311747" />
     <state x="677" y="452" width="546" height="217" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1596555410332">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
