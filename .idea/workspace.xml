@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5167fad-0117-4231-b42e-641b19a3f094" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/server/operations/cell/Read.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/server/operations/cell/Write.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/server/operations/path/Exists.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/server/operations/path/Insert.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/server/operations/path/Remove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/area/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/implementation/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/area/operations/InsertApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/area/operations/InsertTable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/area/operations/RemoveApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/area/operations/RemoveTable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/communication/Embedded.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/communication/Embedded.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/implementation/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/implementation/Operation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/implementation/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/implementation/Path.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/system/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/system/Utility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nadav/tasher/storage/system/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nadav/tasher/storage/system/Storage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +89,7 @@
       <workItem from="1596530246036" duration="14096000" />
       <workItem from="1596553710952" duration="15960000" />
       <workItem from="1596610983529" duration="7605000" />
-      <workItem from="1596619421450" duration="470000" />
+      <workItem from="1596619421450" duration="720000" />
     </task>
     <task id="LOCAL-00001" summary="More base work on all classes">
       <created>1596482527249</created>
@@ -189,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596575427887</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="General progress">
+      <created>1596620071071</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1596620071071</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,10 +216,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="693" y="303" width="524" height="508" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1596559384037" />
-    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2" timestamp="1596575427577">
+    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2" timestamp="1596620070540">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1596575427577" />
+    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1596620070540" />
     <state x="832" y="453" width="255" height="207" key="Github.ShareDialog" timestamp="1596302619189">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -255,10 +248,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="443" y="131" width="1024" height="852" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1596557263775" />
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1596575428269">
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1596620072491">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1596575428269" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1596620072491" />
     <state x="677" y="452" width="546" height="217" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1596555410332">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
